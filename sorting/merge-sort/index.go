@@ -36,6 +36,7 @@ func merge_sort(A []int) []int {
 		return A
 	}
 	mid := len(A) / 2
+	// append([]int{}, A[:mid]...) - creates a new slice without referencing A
 	L := merge_sort(append([]int{}, A[:mid]...))
 	R := merge_sort(append([]int{}, A[mid:]...))
 	return merge_arr(L, R, A)
