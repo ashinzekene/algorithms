@@ -1,0 +1,3 @@
+# Merge Sort
+
+It works by breaking the array into smaller arrays, the dividing the array into two equal halves and sorting these halves, these arrays are then merged into the larger array. To make everything faster, the arrays are broken till there is just one element in the array and as such they do not need to be sorted. They are jst merged with the another one-element array and this coninues till all the arrays have been merged.
