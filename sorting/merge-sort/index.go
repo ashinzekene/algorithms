@@ -7,7 +7,7 @@ func main() {
 }
 
 func merge_arr(L []int, R []int, A []int) []int {
-	l := 0; r := 0; i := 0
+	l, r, i := 0, 0, 0
 	for ;l < len(L) && r < len(R); {
 		if L[l] < R[r] {
 			A[i] = L[l]

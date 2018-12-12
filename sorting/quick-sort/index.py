@@ -20,7 +20,7 @@ def quick_sort(A, start = None, end = None):
         return pIndex
     
     if (start >= end):
-        return A
+        return
     partitionIndex = partition(A, start, end)
     quick_sort(A, start, partitionIndex - 1)
     quick_sort(A, partitionIndex, end)
