@@ -1,21 +1,17 @@
-package main
+package algorithms
 
 import (
 	"math"
 )
 
-func main() {
-
-}
-
-func catAndMouse(x int32, y int32, z int32) string {
+func CatsAndAMouse(x int32, y int32, z int32) string {
 	xDiff := math.Abs(float64(z - x))
 	yDiff := math.Abs(float64(z - y))
 	if xDiff == yDiff {
-		return "Mouse Z"
+		return "Mouse C"
 	} else if xDiff > yDiff {
-		return "Cat A"
-	} else {
 		return "Cat B"
+	} else {
+		return "Cat A"
 	}
 }
