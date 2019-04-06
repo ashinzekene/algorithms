@@ -1,10 +1,6 @@
 package algorithms
 
-func main() {
-	pageCount(40, 4)
-}
-
-func pageCount(n int32, p int32) int32 {
+func DrawingBook(n int32, p int32) int32 {
 	if n == p || p == 1 {
 		return 0
 	}

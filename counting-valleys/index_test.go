@@ -2,7 +2,7 @@ package algorithms
 
 import (
 	"testing"
-	
+
 	"github.com/stretchr/testify/assert"
 )
 

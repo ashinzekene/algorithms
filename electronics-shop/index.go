@@ -4,7 +4,7 @@ func main() {
 
 }
 
-func getMoneySpent(keyboards []int32, drives []int32, b int32) int32 {
+func GetMoneySpent(keyboards []int32, drives []int32, b int32) int32 {
 	var max int32 = -1
 	for _, x := range keyboards {
 		for _, y := range drives {
