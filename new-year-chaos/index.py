@@ -1,5 +1,3 @@
-# Better Algorithm needed. Current -55%
-
 def minimumBribes(q):
     bribes = 0
     def noOfGreater(n, arr):

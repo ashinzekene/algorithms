@@ -1,9 +1,5 @@
 package algorithms
 
-func main() {
-
-}
-
 func GetMoneySpent(keyboards []int32, drives []int32, b int32) int32 {
 	var max int32 = -1
 	for _, x := range keyboards {
