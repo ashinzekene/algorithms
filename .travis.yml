@@ -29,8 +29,8 @@ notifications:
 # build and immediately stop. It's sorta like having set -e enabled in bash.
 # Make sure golangci-lint is vendored.
 before_script:
-  - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
-  - go install -mod vendor github.com/stretchr/testify/assert
+  - go install -mod vendor https://github.com/golangci/golangci-lint/cmd/golangci-lint
+  - go install -mod vendor https://github.com/stretchr/testify/assert
 
 # script always runs to completion (set +e). If we have linter issues AND a
 # failing test, we want to see both. Configure golangci-lint with a
