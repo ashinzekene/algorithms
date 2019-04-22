@@ -2,8 +2,8 @@ package algorithms
 
 func BirthdayBar(s []int32, d int32, m int32) int32 {
 	var result int32 = 0
-	var array = make([]int32, 0, 3)
-	var sum int32 = 0
+	var array []int32
+	var sum int32
 
 	for i := 0; i < len(s); i++ {
 		array = []int32{s[i]}
@@ -16,9 +16,6 @@ func BirthdayBar(s []int32, d int32, m int32) int32 {
 			array = append(array, s[j])
 			if sum == d && len(array) == int(m) {
 				result++
-			}
-			if sum > d || len(array) > int(m) {
-				// Exit inner loop
 			}
 		}
 

@@ -8,7 +8,7 @@ func PermutationEquation(p []int32) []int32 {
 		d[item] = index
 	}
 
-	for i, _ := range p {
+	for i := range p {
 		result[i] = int32(d[d[i+1]+1] + 1)
 	}
 	return result
