@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_AngryProfessor(t *testing.T) {
+func Test(t *testing.T) {
 	testCases := []struct {
 		Array    []int32
 		Expected []int32

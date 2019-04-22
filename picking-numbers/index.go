@@ -1,16 +1,6 @@
 package algorithms
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Println(pickingNumbers([]int32{1, 1, 2, 2, 4, 4, 5, 5, 5}))
-	fmt.Println(pickingNumbers([]int32{4, 6, 5, 3, 3, 1}))
-	fmt.Println(pickingNumbers([]int32{1, 2, 2, 3, 1, 2}))
-}
-
-func pickingNumbers(a []int32) int32 {
+func PickingNumbers(a []int32) int32 {
 	var maxCount int32 = 0
 	var lowerCount int32 = 0
 	var upperCount int32 = 0
