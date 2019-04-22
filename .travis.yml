@@ -29,7 +29,6 @@ notifications:
 # build and immediately stop. It's sorta like having set -e enabled in bash.
 # Make sure golangci-lint is vendored.
 before_script:
-  - go mod init github.com/ashinzekene/algorithms
   - go get github.com/golangci/golangci-lint/cmd/golangci-lint
   - go get github.com/stretchr/testify/assert
   - go get
