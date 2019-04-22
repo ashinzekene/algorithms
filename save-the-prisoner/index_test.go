@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_SaveThePrisoner(t *testing.T) {
 	testCases := []struct {
 		Prisoner int32
 		Sweets   int32
@@ -66,12 +66,6 @@ func Test(t *testing.T) {
 			711706897,
 			68977959,
 			82636723,
-		},
-		{
-			10728390,
-			56676511,
-			67149447,
-			9258153,
 		},
 		{
 			104513201,

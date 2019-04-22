@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_LeftRotation(t *testing.T) {
 	testCases := []struct {
 		Rotations int32
 		Array     []int32

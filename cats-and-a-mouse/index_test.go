@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_CatAndMouse(t *testing.T) {
 	testCases := []struct {
 		CatA     int32
 		CatB     int32

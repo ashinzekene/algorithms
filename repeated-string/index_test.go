@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_RepeartedString(t *testing.T) {
 	testCases := []struct {
 		String   string
 		Repeats  int64

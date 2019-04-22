@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_ViralAdvertising(t *testing.T) {
 	testCases := []struct {
 		Ad       int32
 		Expected int32
@@ -16,20 +16,20 @@ func Test(t *testing.T) {
 			0,
 		},
 		{
-			2,
-			1,
-		},
-		{
 			5,
-			2,
-		},
-		{
 			24,
-			5,
+		},
+		{
+			4,
+			15,
+		},
+		{
+			3,
+			9,
 		},
 	}
 	for _, tc := range testCases {
-		actual := viralAvertising(tc.Ad)
+		actual := ViralAdvertising(tc.Ad)
 		assert.Equal(t, tc.Expected, actual)
 	}
 }

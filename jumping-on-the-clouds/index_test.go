@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_JumingClouds(t *testing.T) {
 	testCases := []struct {
 		Clouds   []int32
 		Expected int32

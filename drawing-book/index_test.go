@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_DrawingBook(t *testing.T) {
 	testCases := []struct {
 		NoOfPages int32
 		Page      int32

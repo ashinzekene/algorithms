@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_DesignerPDF(t *testing.T) {
 	testCases := []struct {
 		Height   []int32
 		Word     string

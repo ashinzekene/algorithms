@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_BirthdayBar(t *testing.T) {
 	testCases := []struct {
 		Squares  []int32
 		Day      int32

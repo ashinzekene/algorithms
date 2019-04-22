@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test(t *testing.T) {
+func Test_CountingValleys(t *testing.T) {
 	testCases := []struct {
 		Path     string
 		Steps    int32

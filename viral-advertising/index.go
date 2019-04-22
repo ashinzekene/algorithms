@@ -4,7 +4,7 @@ import (
 	"math"
 )
 
-func viralAvertising(n int32) int32 {
+func ViralAdvertising(n int32) int32 {
 	shared := 5
 	liked := 0
 
