@@ -30,9 +30,9 @@ notifications:
 # Make sure golangci-lint is vendored.
 before_script:
   - go mod init github.com/ashinzekene/algorithms
-  - go install -mod vendor github.com/golangci/golangci-lint/cmd/golangci-lint
-  - go install -mod vendor github.com/stretchr/testify/assert
-
+  - go get github.com/golangci/golangci-lint/cmd/golangci-lint
+  - go get github.com/stretchr/testify/assert
+  - go get
 # script always runs to completion (set +e). If we have linter issues AND a
 # failing test, we want to see both. Configure golangci-lint with a
 # .golangci.yml file at the top level of your repo.
