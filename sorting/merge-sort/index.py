@@ -8,6 +8,7 @@ def merge_sort(A):
         of list (arr) in order
         """
         l = r = i = 0
+        print(len(L), len(R), len(arr))
         while l < len(L) and r < len(R):
             if L[l] < R[r]:
                 arr[i] = L[l]
