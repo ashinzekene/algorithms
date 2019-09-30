@@ -1,4 +1,4 @@
-package main
+package algorithms
 
 import (
 	"sort"
@@ -6,7 +6,7 @@ import (
 
 func toys(w []int32) int32 {
 	sort.Slice(w, func(i, j int) bool {
-		return i < j
+		return w[i] < w[j]
 	})
 	mins := make([]int32, 0)
 	for i, v := range w {
