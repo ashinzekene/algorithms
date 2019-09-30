@@ -31,6 +31,6 @@ func Test_RandomNote(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := checkMagazine(tc.Magazine, tc.Note)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not wortk for %v", tc.Note))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v", tc.Note))
 	}
 }

@@ -26,6 +26,6 @@ func Test_LeftRotation(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := LeftRotation(tc.Array, tc.Rotations)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not wortk for %v", tc.Array))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v", tc.Array))
 	}
 }

@@ -27,6 +27,6 @@ func Test_MinimumAbsoluteDifference(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := minimumAbsoluteDifference(tc.Array)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not wortk for %v", tc.Array))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v", tc.Array))
 	}
 }

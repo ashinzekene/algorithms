@@ -23,6 +23,6 @@ func Test_NewYearChaos(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := MinimumBribes(tc.Array)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not wortk for %v", tc.Array))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v", tc.Array))
 	}
 }

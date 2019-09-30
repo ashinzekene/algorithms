@@ -9,9 +9,9 @@ import (
 
 func Test_LeftRotation(t *testing.T) {
 	testCases := []struct {
-		StringA string
-		StringB string
-		Expected  int32
+		StringA  string
+		StringB  string
+		Expected int32
 	}{
 		{
 			"cde",
@@ -31,6 +31,6 @@ func Test_LeftRotation(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := MakeAnagram(tc.StringA, tc.StringB)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not wortk for %s and %s", tc.StringA, tc.StringB))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %s and %s", tc.StringA, tc.StringB))
 	}
 }
