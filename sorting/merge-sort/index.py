@@ -17,7 +17,7 @@ def merge_sort(A):
                 arr[i] = R[r]
                 r += 1
             i += 1
-        while l < len(L):
+        while l < len(L): 
             arr[i] = L[l]
             l += 1
             i += 1
