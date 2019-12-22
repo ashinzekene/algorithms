@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_ClimbingTheLeaderboard(t *testing.T) {
+func Test_maxArea(t *testing.T) {
 	testCases := []struct {
 		Height   []int
 		Expected int
