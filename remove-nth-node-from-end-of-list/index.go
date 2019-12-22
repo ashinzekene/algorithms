@@ -20,22 +20,6 @@ func (l *ListNode) String() string {
 	return str_node + " => None"
 }
 
-func removeNthFromEnd(head *ListNode, n int) *ListNode {
-	dummy := ListNode{0, nil}
-	dummy.Next = head
-	firstPointer := &dummy
-	secondPointer := &dummy
-	for i := 0; i < n+1; i++ {
-		firstPointer = firstPointer.Next
-	}
-	for firstPointer != nil {
-		firstPointer = firstPointer.Next
-		secondPointer = secondPointer.Next
-	}
-	secondPointer.Next = secondPointer.Next.Next
-	return dummy.Next
-}
-
 func ListNodeFromString(str string, delimiter string) *ListNode {
 	if str == "" {
 		return nil
@@ -50,4 +34,20 @@ func ListNodeFromString(str string, delimiter string) *ListNode {
 		current = current.Next
 	}
 	return head
+}
+
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	dummy := ListNode{0, nil}
+	dummy.Next = head
+	firstPointer := &dummy
+	secondPointer := &dummy
+	for i := 0; i < n+1; i++ {
+		firstPointer = firstPointer.Next
+	}
+	for firstPointer != nil {
+		firstPointer = firstPointer.Next
+		secondPointer = secondPointer.Next
+	}
+	secondPointer.Next = secondPointer.Next.Next
+	return dummy.Next
 }
