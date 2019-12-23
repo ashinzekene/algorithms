@@ -37,32 +37,49 @@ func ListNodeFromString(str string, delimiter string) *ListNode {
 }
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	var head *ListNode
-	var currentNode *ListNode
-	var otherNode *ListNode
 	if l1 == nil {
 		return l2
 	} else if l2 == nil {
 		return l1
 	}
+	var head *ListNode
 	if l1.Val < l2.Val {
 		head = l1
-		otherNode = l2
+		head.Next = mergeTwoLists(l1.Next, l2)
 	} else {
 		head = l2
-		otherNode = l1
-	}
-	currentNode = head
-	for otherNode != nil && currentNode.Next != nil {
-		if currentNode.Next.Val > otherNode.Val {
-			oldNext := currentNode.Next
-			currentNode.Next = otherNode
-			otherNode = oldNext
-		}
-		currentNode = currentNode.Next
-	}
-	if currentNode.Next == nil && otherNode != nil {
-		currentNode.Next = otherNode
+		head.Next = mergeTwoLists(l2.Next, l1)
 	}
 	return head
 }
+
+// func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+// 	var head *ListNode
+// 	var currentNode *ListNode
+// 	var otherNode *ListNode
+// 	if l1 == nil {
+// 		return l2
+// 	} else if l2 == nil {
+// 		return l1
+// 	}
+// 	if l1.Val < l2.Val {
+// 		head = l1
+// 		otherNode = l2
+// 	} else {
+// 		head = l2
+// 		otherNode = l1
+// 	}
+// 	currentNode = head
+// 	for otherNode != nil && currentNode.Next != nil {
+// 		if currentNode.Next.Val > otherNode.Val {
+// 			oldNext := currentNode.Next
+// 			currentNode.Next = otherNode
+// 			otherNode = oldNext
+// 		}
+// 		currentNode = currentNode.Next
+// 	}
+// 	if currentNode.Next == nil && otherNode != nil {
+// 		currentNode.Next = otherNode
+// 	}
+// 	return head
+// }
