@@ -37,3 +37,33 @@ func trap(height []int) int {
 	}
 	return volume
 }
+
+func trap2(height []int) int {
+	length := len(height)
+	if length < 3 {
+		return 0
+	}
+	l := 0
+	r := length - 1
+	l_max := height[0]
+	r_max := height[length-1]
+	result := 0
+	for l < r {
+		if height[l] < height[r] {
+			if height[l] < l_max {
+				result += l_max - height[l]
+			} else {
+				l_max = height[l]
+			}
+			l++
+		} else {
+			if height[r] < r_max {
+				result += r_max - height[r]
+			} else {
+				r_max = height[r]
+			}
+			r--
+		}
+	}
+	return result
+}

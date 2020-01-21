@@ -38,6 +38,3 @@ func Test_maxArea(t *testing.T) {
 		assert.Equal(t, tc.Expected, result, fmt.Sprintf("Failed for %v", tc.Height))
 	}
 }
-
-// 100 90 90 80 75 60
-// 50 65 77 90 102

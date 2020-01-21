@@ -18,6 +18,8 @@ func Test_3SumClosest(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := trap(tc.Nums)
+		actual2 := trap2(tc.Nums)
 		assert.Equal(t, tc.Expected, actual)
+		assert.Equal(t, tc.Expected, actual2)
 	}
 }
