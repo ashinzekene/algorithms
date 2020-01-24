@@ -1,5 +1,7 @@
 package algorithms
 
+import "github.com/ashinzekene/algorithms/utils"
+
 func maxProduct(nums []int) int {
 	if len(nums) == 0 {
 		return 0
@@ -8,29 +10,15 @@ func maxProduct(nums []int) int {
 	prevMin := mainMax
 	prevMax := mainMax
 	for _, v := range nums[1:] {
-		max_min := max(prevMin*v, v)
-		min_min := min(prevMin*v, v)
-		max_max := max(prevMax*v, v)
-		min_max := min(prevMax*v, v)
+		max_min := utils.Max(prevMin*v, v)
+		min_min := utils.Min(prevMin*v, v)
+		max_max := utils.Max(prevMax*v, v)
+		min_max := utils.Min(prevMax*v, v)
 
-		prevMin = min(min_max, min_min)
-		prevMax = max(max_min, max_max)
+		prevMin = utils.Min(min_max, min_min)
+		prevMax = utils.Max(max_min, max_max)
 
-		mainMax = max(mainMax, prevMax)
+		mainMax = utils.Max(mainMax, prevMax)
 	}
 	return mainMax
-}
-
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
 }

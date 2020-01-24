@@ -1,48 +1,14 @@
 package algorithms
 
-import (
-	"strconv"
-	"strings"
-)
+import "github.com/ashinzekene/algorithms/utils/lists"
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func (l *ListNode) String() string {
-	str_node := strconv.Itoa(l.Val)
-	currentNode := l
-	for currentNode.Next != nil {
-		currentNode = currentNode.Next
-		str_node += " => " + strconv.Itoa(currentNode.Val)
-	}
-	return str_node + " => None"
-}
-
-func ListNodeFromString(str string, delimiter string) *ListNode {
-	if str == "" {
-		return nil
-	}
-	strList := strings.Split(str, delimiter)
-	i1, _ := strconv.Atoi(strList[0])
-	head := &ListNode{i1, nil}
-	currentNode := head
-	for _, str := range strList[1:] {
-		i, _ := strconv.Atoi(str)
-		currentNode.Next = &ListNode{i, nil}
-		currentNode = currentNode.Next
-	}
-	return head
-}
-
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
 	if l1 == nil {
 		return l2
 	} else if l2 == nil {
 		return l1
 	}
-	var head *ListNode
+	var head *lists.ListNode
 	if l1.Val < l2.Val {
 		head = l1
 		head.Next = mergeTwoLists(l1.Next, l2)
@@ -53,10 +19,10 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	return head
 }
 
-// func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-// 	var head *ListNode
-// 	var currentNode *ListNode
-// 	var otherNode *ListNode
+// func mergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
+// 	var head *lists.ListNode
+// 	var currentNode *lists.ListNode
+// 	var otherNode *lists.ListNode
 // 	if l1 == nil {
 // 		return l2
 // 	} else if l2 == nil {

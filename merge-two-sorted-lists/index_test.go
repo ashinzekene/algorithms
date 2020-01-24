@@ -4,39 +4,40 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/ashinzekene/algorithms/utils/lists"
 	"github.com/stretchr/testify/assert"
 )
 
 func Test_mergeTwoLists(t *testing.T) {
 	testCases := []struct {
-		Node1    *ListNode
-		Node2    *ListNode
-		Expected *ListNode
+		Node1    *lists.ListNode
+		Node2    *lists.ListNode
+		Expected *lists.ListNode
 	}{
 		{
-			ListNodeFromString("1,2,3,4,5", ","),
-			ListNodeFromString("1,2,3,5", ","),
-			ListNodeFromString("1,1,2,2,3,3,4,5,5", ","),
+			lists.ListNodeFromString("1,2,3,4,5", ","),
+			lists.ListNodeFromString("1,2,3,5", ","),
+			lists.ListNodeFromString("1,1,2,2,3,3,4,5,5", ","),
 		},
 		{
-			ListNodeFromString("1,2,3,6", ","),
-			ListNodeFromString("2,4,5", ","),
-			ListNodeFromString("1,2,2,3,4,5,6", ","),
+			lists.ListNodeFromString("1,2,3,6", ","),
+			lists.ListNodeFromString("2,4,5", ","),
+			lists.ListNodeFromString("1,2,2,3,4,5,6", ","),
 		},
 		{
-			ListNodeFromString("1,2,6,3,5,7,9,10,12", ","),
-			ListNodeFromString("", ","),
-			ListNodeFromString("1,2,6,3,5,7,9,10,12", ","),
+			lists.ListNodeFromString("1,2,6,3,5,7,9,10,12", ","),
+			lists.ListNodeFromString("", ","),
+			lists.ListNodeFromString("1,2,6,3,5,7,9,10,12", ","),
 		},
 		{
-			ListNodeFromString("", ","),
-			ListNodeFromString("3", ","),
-			ListNodeFromString("3", ","),
+			lists.ListNodeFromString("", ","),
+			lists.ListNodeFromString("3", ","),
+			lists.ListNodeFromString("3", ","),
 		},
 		{
-			ListNodeFromString("1", ","),
-			ListNodeFromString("", ","),
-			ListNodeFromString("1", ","),
+			lists.ListNodeFromString("1", ","),
+			lists.ListNodeFromString("", ","),
+			lists.ListNodeFromString("1", ","),
 		},
 	}
 	for _, tc := range testCases {

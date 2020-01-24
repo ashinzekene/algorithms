@@ -4,39 +4,40 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/ashinzekene/algorithms/utils/lists"
 	"github.com/stretchr/testify/assert"
 )
 
 func Test_removeNthFromEnd(t *testing.T) {
 	testCases := []struct {
-		Node     *ListNode
+		Node     *lists.ListNode
 		Target   int
-		Expected *ListNode
+		Expected *lists.ListNode
 	}{
 		{
-			ListNodeFromString("1,2,3,4,5", ","),
+			lists.ListNodeFromString("1,2,3,4,5", ","),
 			2,
-			ListNodeFromString("1,2,3,5", ","),
+			lists.ListNodeFromString("1,2,3,5", ","),
 		},
 		{
-			ListNodeFromString("1,2,6,3", ","),
+			lists.ListNodeFromString("1,2,6,3", ","),
 			1,
-			ListNodeFromString("1,2,6", ","),
+			lists.ListNodeFromString("1,2,6", ","),
 		},
 		{
-			ListNodeFromString("1,2,6,3,5,7,9,10,12", ","),
+			lists.ListNodeFromString("1,2,6,3,5,7,9,10,12", ","),
 			7,
-			ListNodeFromString("1,2,3,5,7,9,10,12", ","),
+			lists.ListNodeFromString("1,2,3,5,7,9,10,12", ","),
 		},
 		{
-			ListNodeFromString("6,5,3,2,6,3", ","),
+			lists.ListNodeFromString("6,5,3,2,6,3", ","),
 			6,
-			ListNodeFromString("5,3,2,6,3", ","),
+			lists.ListNodeFromString("5,3,2,6,3", ","),
 		},
 		{
-			ListNodeFromString("1", ","),
+			lists.ListNodeFromString("1", ","),
 			1,
-			ListNodeFromString("", ","),
+			lists.ListNodeFromString("", ","),
 		},
 	}
 	for _, tc := range testCases {
