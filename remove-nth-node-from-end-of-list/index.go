@@ -3,7 +3,7 @@ package algorithms
 import "github.com/ashinzekene/algorithms/utils/lists"
 
 func removeNthFromEnd(head *lists.ListNode, n int) *lists.ListNode {
-	dummy := lists.ListNode{0, nil}
+	dummy := lists.ListNode{Val: 0, Next: nil}
 	dummy.Next = head
 	firstPointer := &dummy
 	secondPointer := &dummy
