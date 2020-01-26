@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_3SumClosest(t *testing.T) {
+func Test_TrapTainWater(t *testing.T) {
 	testCases := []struct {
 		Nums     []int
 		Expected int

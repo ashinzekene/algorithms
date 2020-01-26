@@ -70,6 +70,19 @@ func (t *Tree) PostOrder() []int {
 	return result
 }
 
+func (t *Tree) LevelOrder() []int {
+	result := make([]int, 0)
+	stack := make([]int, 0)
+	node := t.Head
+	for node != nil {
+		if len(stack) == 0 {
+
+		}
+	}
+	postOrder(t.Head, &result)
+	return result
+}
+
 // ========= Create tree from array
 func ArrayToTree(arr []int) Tree {
 	t := Tree{Head: NewTreeNode(arr[0])}

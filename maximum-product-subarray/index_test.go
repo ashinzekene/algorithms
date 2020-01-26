@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_LeftRotation(t *testing.T) {
+func Test_MaxProduct(t *testing.T) {
 	testCases := []struct {
 		Nums     []int
 		Expected int
@@ -18,7 +18,7 @@ func Test_LeftRotation(t *testing.T) {
 		},
 		{
 			[]int{-2, 3, -4},
-			24,
+			3,
 		},
 		{
 			[]int{-2, 0, -1},
