@@ -72,14 +72,19 @@ func (t *Tree) PostOrder() []int {
 
 func (t *Tree) LevelOrder() []int {
 	result := make([]int, 0)
-	stack := make([]int, 0)
 	node := t.Head
-	for node != nil {
-		if len(stack) == 0 {
-
+	stack := []*TreeNode{node}
+	for len(stack) > 0 {
+		node = stack[0]
+		stack = stack[1:]
+		result = append(result, node.Val)
+		if node.Left != nil {
+			stack = append(stack, node.Left)
+		}
+		if node.Right != nil {
+			stack = append(stack, node.Right)
 		}
 	}
-	postOrder(t.Head, &result)
 	return result
 }
 
