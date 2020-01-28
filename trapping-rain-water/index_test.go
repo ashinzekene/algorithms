@@ -13,7 +13,7 @@ func Test_TrapTainWater(t *testing.T) {
 	}{
 		{
 			[]int{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1},
-			6,
+			19,
 		},
 	}
 	for _, tc := range testCases {
