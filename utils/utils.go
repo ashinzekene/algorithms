@@ -1,15 +1,21 @@
 package utils
 
-func Max(a, b int) int {
-	if a > b {
-		return a
+func Max(a ...int) int {
+	max := a[0]
+	for _, v := range a {
+		if v > max {
+			max = v
+		}
 	}
-	return b
+	return max
 }
 
-func Min(a, b int) int {
-	if a > b {
-		return b
+func Min(a ...int) int {
+	min := a[0]
+	for _, v := range a {
+		if v < min {
+			min = v
+		}
 	}
-	return a
+	return min
 }
