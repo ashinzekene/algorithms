@@ -18,7 +18,7 @@ func Test_MaxProduct(t *testing.T) {
 		},
 		{
 			[]int{-2, 3, -4},
-			12,
+			24,
 		},
 		{
 			[]int{-2, 0, -1},
