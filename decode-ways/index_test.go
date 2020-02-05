@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_DecodeVariations(t *testing.T) {
+func Test_DecodeWays(t *testing.T) {
 	testCases := []struct {
 		String   string
 		Expected int
@@ -53,7 +53,7 @@ func Test_DecodeVariations(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		result := decodeVariations(tc.String)
+		result := numDecodings(tc.String)
 		assert.Equal(t, tc.Expected, result, "Failed for %v", tc.String)
 	}
 }
