@@ -35,3 +35,16 @@ func ListNodeFromString(str string, delimiter string) *ListNode {
 	}
 	return head
 }
+
+func ListNodeFromList(list []int) *ListNode {
+	if len(list) == 0 {
+		return nil
+	}
+	head := &ListNode{list[0], nil}
+	node := head
+	for i := 1; i < len(list); i++ {
+		node.Next = &ListNode{list[i], nil}
+		node = node.Next
+	}
+	return head
+}
