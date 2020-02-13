@@ -31,11 +31,7 @@ func reorderLogFiles(logs []string) []string {
 }
 
 func isLetterLog(log string) bool {
-	for i, ch := range log {
-		if string(ch) == " " {
-			_, err := strconv.Atoi(string(log[i+1]))
-			return err != nil
-		}
-	}
-	return false
+	i := strings.Index(log, " ") + 1
+	_, err := strconv.Atoi(string(log[i]))
+	return err != nil
 }
