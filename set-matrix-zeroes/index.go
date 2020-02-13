@@ -1,8 +1,8 @@
 package algorithms
 
 func setZeroes(matrix [][]int) [][]int {
-	rows := make(map[int]bool, 0)
-	cols := make(map[int]bool, 0)
+	rows := make(map[int]bool)
+	cols := make(map[int]bool)
 	if len(matrix) == 0 {
 		return matrix
 	}

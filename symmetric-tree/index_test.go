@@ -38,11 +38,11 @@ func Test_Squares(t *testing.T) {
 			true,
 		},
 		{
-			ArrayToTree([]int{1, 2, 2, 3, 4, 4, 3}).Head,
+			TreeFromList([]int{1, 2, 2, 3, 4, 4, 3}).Head,
 			false,
 		},
 		{
-			ArrayToTree([]int{1, 2, 9, 5, 6, 7, 3}).Head,
+			TreeFromList([]int{1, 2, 9, 5, 6, 7, 3}).Head,
 			false,
 		},
 	}

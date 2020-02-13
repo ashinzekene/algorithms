@@ -4,21 +4,21 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ashinzekene/algorithms/utils/trees"
+	. "github.com/ashinzekene/algorithms/utils/trees"
 	"github.com/stretchr/testify/assert"
 )
 
 func Test_LeftRotation(t *testing.T) {
 	testCases := []struct {
-		Nums     *trees.TreeNode
+		Nums     *TreeNode
 		Expected int
 	}{
 		{
-			trees.ArrayToTree([]int{3, 2, 6, 4}).Head,
+			TreeFromList([]int{3, 2, 6, 4}).Head,
 			3,
 		},
 		{
-			trees.ArrayToTree([]int{9, 3, 20, 15, 7}).Head,
+			TreeFromList([]int{9, 3, 20, 15, 7}).Head,
 			3,
 		},
 	}

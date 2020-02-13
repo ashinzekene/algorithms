@@ -89,7 +89,7 @@ func (t *Tree) LevelOrder() []int {
 }
 
 // ========= Create tree from array
-func ArrayToTree(arr []int) Tree {
+func TreeFromList(arr []int) Tree {
 	t := Tree{Head: NewTreeNode(arr[0])}
 	for _, v := range arr[1:] {
 		t.Insert(v)
