@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_TrapTainWater(t *testing.T) {
+func Test_UniquePaths(t *testing.T) {
 	testCases := []struct {
 		M        int
 		N        int
