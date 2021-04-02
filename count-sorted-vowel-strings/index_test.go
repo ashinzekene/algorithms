@@ -21,7 +21,7 @@ func Test_CountSortedVowelStrings(t *testing.T) {
 			15,
 		},
 		{
-			2,
+			3,
 			35,
 		},
 	}

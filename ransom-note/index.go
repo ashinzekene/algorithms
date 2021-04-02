@@ -4,11 +4,7 @@ func checkMagazine(magazine []string, note []string) string {
 	words := make(map[string]int32)
 
 	for _, w := range magazine {
-		if _, ok := words[w]; ok {
-			words[w]++
-		} else {
-			words[w] = 1
-		}
+		words[w]++
 	}
 
 	for _, w := range note {

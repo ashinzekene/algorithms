@@ -31,6 +31,10 @@ func Test_AlternatingCharacters(t *testing.T) {
 			"AAABBB",
 			4,
 		},
+		{
+			"AABABA",
+			1,
+		},
 	}
 	for _, tc := range testCases {
 		result := AlternatingCharacters(tc.String)

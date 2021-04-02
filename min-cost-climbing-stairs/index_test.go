@@ -13,7 +13,7 @@ func Test_MinCostClimbingStairs(t *testing.T) {
 	}{
 		{
 			[]int{1, 100, 1, 1, 1, 100, 1, 1, 100, 1},
-			9,
+			6,
 		},
 		{
 			[]int{0, 0, 0, 0},
@@ -29,7 +29,7 @@ func Test_MinCostClimbingStairs(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		actual := minCostClimbingStairs2(tc.Costs)
+		actual := minCostClimbingStairs(tc.Costs)
 		assert.Equal(t, tc.Expected, actual)
 	}
 }

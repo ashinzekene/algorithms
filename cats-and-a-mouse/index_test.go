@@ -1,6 +1,7 @@
 package algorithms
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -28,6 +29,6 @@ func Test_CatAndMouse(t *testing.T) {
 	}
 	for index, tc := range testCases {
 		actual := CatsAndAMouse(tc.CatA, tc.CatB, tc.MouseC)
-		assert.Equal(t, tc.Expected, actual, "Did not work for test case "+string(index))
+		assert.Equal(t, tc.Expected, actual, "Did not work for test case "+fmt.Sprint(index))
 	}
 }

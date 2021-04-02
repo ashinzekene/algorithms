@@ -1,9 +1,4 @@
-package main
-
-func main() {
-	n := 33
-	println(countVowelStrings(n))
-}
+package algorithms
 
 // Intuition
 // -	 a 	e	 i  o  u
