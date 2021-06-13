@@ -34,7 +34,7 @@ func Test_maxArea(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		result := maxArea(tc.Height)
+		result := MaxArea(tc.Height)
 		assert.Equal(t, tc.Expected, result, fmt.Sprintf("Failed for %v", tc.Height))
 	}
 }

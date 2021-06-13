@@ -1,14 +1,16 @@
 package algorithms
 
-import "math"
+import (
+	. "github.com/ashinzekene/algorithms/utils"
+)
 
-func maxArea(height []int) int {
+func MaxArea(height []int) int {
 	maxArea := 0
 	l := 0
 	r := len(height) - 1
 	for l < r {
-		area := float64(r-l) * math.Min(float64(height[l]), float64(height[r]))
-		maxArea = int(math.Max(float64(area), float64(maxArea)))
+		area := r - l*Min(height[l], height[r])
+		maxArea = Max(area, maxArea)
 		if height[l] > height[r] {
 			r -= 1
 		} else {
