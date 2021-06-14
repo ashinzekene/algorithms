@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_searchRange(t *testing.T) {
+func Test_firstMissingPositive(t *testing.T) {
 	testCases := []struct {
 		Nums     []int
 		Expected int
@@ -29,8 +29,8 @@ func Test_searchRange(t *testing.T) {
 			1,
 		},
 		{
-			[]int{2},
-			1,
+			[]int{2, 5, 10, 9, 1, 3, 4},
+			6,
 		},
 		{
 			[]int{-4},
@@ -38,7 +38,7 @@ func Test_searchRange(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		actual := firstMissingPositive(tc.Nums)
+		actual := firstMissingPositive1(tc.Nums)
 		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for Digit %d", tc.Nums))
 	}
 }
