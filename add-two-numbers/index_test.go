@@ -20,6 +20,11 @@ func Test_AddTwoNumbers(t *testing.T) {
 			ListNodeFromList([]int{7, 0, 8}),
 		},
 		{
+			ListNodeFromList([]int{2, 4, 3}),
+			ListNodeFromList([]int{5, 6, 4}),
+			ListNodeFromList([]int{7, 0, 8}),
+		},
+		{
 			ListNodeFromList([]int{6, 7}),
 			ListNodeFromList([]int{1, 5}),
 			ListNodeFromList([]int{7, 2, 1}),
@@ -27,16 +32,16 @@ func Test_AddTwoNumbers(t *testing.T) {
 		{
 			ListNodeFromList([]int{5, 5, 5, 5, 5}),
 			ListNodeFromList([]int{6, 4, 4, 4}),
-			ListNodeFromList([]int{1, 0, 0, 0, 0, 1}),
+			ListNodeFromList([]int{1, 0, 0, 0, 6}),
 		},
 		{
 			ListNodeFromList([]int{9, 9, 9}),
 			ListNodeFromList([]int{1, 1, 1, 1, 1, 1, 1, 1, 1}),
-			ListNodeFromList([]int{1, 1, 1, 1, 1, 2, 1, 1, 0}),
+			ListNodeFromList([]int{0, 1, 1, 2, 1, 1, 1, 1, 1}),
 		},
 	}
 	for _, tc := range testCases {
-		actual := AddTwoNumbers(tc.L1, tc.L1)
+		actual := AddTwoNumbers(tc.L1, tc.L2)
 		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v and %v", tc.L1, tc.L2))
 	}
 }
