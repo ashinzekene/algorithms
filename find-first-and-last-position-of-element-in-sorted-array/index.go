@@ -21,3 +21,36 @@ func searchRange(nums []int, target int) []int {
 	}
 	return result
 }
+
+func searchRange1(nums []int, target int) []int {
+	i := 0
+	j := len(nums) - 1
+	for i <= j {
+		m := (j + i) / 2
+		val := nums[m]
+		if val < target {
+			i = m + 1
+		} else if val >= target {
+			j = m - 1
+		}
+	}
+
+	if i > len(nums)-1 || nums[i] != target {
+		return []int{-1, -1}
+	}
+	start := i
+
+	i = 0
+	j = len(nums) - 1
+	for i <= j {
+		m := (i + j) / 2
+		val := nums[m]
+		if val <= target {
+			i = m + 1
+		} else {
+			j = m - 1
+		}
+	}
+
+	return []int{start, j}
+}
