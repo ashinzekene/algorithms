@@ -29,7 +29,7 @@ func Test_DecodeVariations(t *testing.T) {
 		},
 		{
 			"1270",
-			0,
+			2,
 		},
 		{
 			"83778549129",

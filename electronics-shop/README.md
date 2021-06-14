@@ -1,2 +1,4 @@
-# electronics-shop/ 
+# Electronics Shop
+
+https://www.hackerrank.com/challenges/electronics-shop/problem 
 

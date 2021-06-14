@@ -43,6 +43,6 @@ func Test_combinationSum(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		result := combinationSum(tc.Combinations, tc.Target)
-		assert.Equal(t, tc.Expected, result, fmt.Sprintf("Failed for %v", tc.Combinations))
+		assert.Equal(t, tc.Expected, result, fmt.Sprintf("Failed for %v for sum %v", tc.Combinations, tc.Target))
 	}
 }

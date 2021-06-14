@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_maxArea(t *testing.T) {
+func Test_climbingArea(t *testing.T) {
 	testCases := []struct {
 		Num      int
 		Expected int
