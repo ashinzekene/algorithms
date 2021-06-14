@@ -56,6 +56,8 @@ func Test_searchRange(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := searchRange1(tc.Nums, tc.Target)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for Digit %d", tc.Nums))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed searchRange1 for Digit %d", tc.Nums))
+		actual = searchRange(tc.Nums, tc.Target)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed searchRange for Digit %d", tc.Nums))
 	}
 }
