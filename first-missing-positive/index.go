@@ -32,13 +32,13 @@ func firstMissingPositive1(nums []int) int {
 	l := len(nums)
 	for i := range nums {
 		if nums[i] <= 0 || nums[i] > l {
-			nums[i] = len(nums)
+			nums[i] = len(nums) + 1
 		}
 	}
 
 	for _, num := range nums {
 		num = int(math.Abs(float64(num)))
-		if num == len(nums) {
+		if num > len(nums) {
 			continue
 		}
 		numIndex := num - 1
@@ -54,5 +54,5 @@ func firstMissingPositive1(nums []int) int {
 		}
 	}
 
-	return len(nums)
+	return len(nums) + 1
 }

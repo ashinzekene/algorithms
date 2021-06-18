@@ -36,9 +36,19 @@ func Test_firstMissingPositive(t *testing.T) {
 			[]int{-4},
 			1,
 		},
+		{
+			[]int{1, 2, 3, 4},
+			5,
+		},
+		{
+			[]int{1},
+			2,
+		},
 	}
 	for _, tc := range testCases {
-		actual := firstMissingPositive1(tc.Nums)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for Digit %d", tc.Nums))
+		actual := firstMissingPositive(tc.Nums)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for %v", tc.Nums))
+		actual = firstMissingPositive1(tc.Nums)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for %v", tc.Nums))
 	}
 }
