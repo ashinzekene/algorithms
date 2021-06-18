@@ -1,14 +1,14 @@
 package algorithms
 
+import . "github.com/ashinzekene/algorithms/utils"
+
 func canJump(nums []int) bool {
-	if len(nums) <= 1 {
-		return true
-	}
-	lastGood := len(nums) - 1
-	for i := len(nums) - 2; i >= 0; i-- {
-		if nums[i]+i >= lastGood {
-			lastGood = i
+	max := 0
+	for i := 0; i < len(nums)-1; i++ {
+		max = Max(max-1, nums[i])
+		if max == 0 {
+			return false
 		}
 	}
-	return lastGood == 0
+	return true
 }

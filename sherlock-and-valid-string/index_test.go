@@ -16,12 +16,20 @@ func Test_isValid(t *testing.T) {
 			"NO",
 		},
 		{
-			"abcdefghhgfedecba",
+			"abcdefghhgfedcba",
 			"YES",
 		},
 		{
 			"aabbccddeefghi",
 			"NO",
+		},
+		{
+			"aabbccddeeffgghhi",
+			"YES",
+		},
+		{
+			"aabbccddeeffgghhii",
+			"YES",
 		},
 	}
 	for _, tc := range testCases {
