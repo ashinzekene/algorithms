@@ -13,3 +13,15 @@ func isSubsequence(s string, t string) bool {
 	}
 	return i == len(s)
 }
+
+func isSubsequence1(s string, t string) bool {
+	if s == "" {
+		return true
+	}
+	for i, v := range t {
+		if string(v) == string(s[0]) {
+			return isSubsequence(s[1:], t[i+1:])
+		}
+	}
+	return false
+}

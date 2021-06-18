@@ -26,5 +26,7 @@ func Test_MinCostClimbingStairs(t *testing.T) {
 	for _, tc := range testCases {
 		actual := isSubsequence(tc.S, tc.T)
 		assert.Equal(t, tc.Expected, actual)
+		actual = isSubsequence1(tc.S, tc.T)
+		assert.Equal(t, tc.Expected, actual)
 	}
 }
