@@ -32,9 +32,13 @@ func Test_lengthOfLIS(t *testing.T) {
 			[]int{50, 3, 10, 7, 40, 80},
 			4,
 		},
+		{
+			[]int{50, 53, 55, 5, 6, 7, 40, 80},
+			5,
+		},
 	}
 	for _, tc := range testCases {
 		actual := lengthOfLIS(tc.Nums)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v", tc.Nums))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("lengthOfLIS did not work for %v", tc.Nums))
 	}
 }
