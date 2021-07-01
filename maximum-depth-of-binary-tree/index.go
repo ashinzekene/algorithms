@@ -1,15 +1,13 @@
 package algorithms
 
-import "github.com/ashinzekene/algorithms/utils/trees"
+import (
+	. "github.com/ashinzekene/algorithms/utils"
+	. "github.com/ashinzekene/algorithms/utils/trees"
+)
 
-func maxDepth(root *trees.TreeNode) int {
+func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
-	left := 1 + maxDepth(root.Left)
-	right := 1 + maxDepth(root.Right)
-	if left > right {
-		return left
-	}
-	return right
+	return 1 + Max(maxDepth(root.Left), maxDepth(root.Right))
 }
