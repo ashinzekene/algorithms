@@ -1,12 +1,9 @@
 package algorithms
 
+import . "github.com/ashinzekene/algorithms/utils"
+
 func minTime(machines []int64, goal int64) int64 {
-	var max_day int64 = 0
-	for _, x := range machines {
-		if x > max_day {
-			max_day = x
-		}
-	}
+	max_day := Max64(machines...)
 	var start int64 = 0
 	end := max_day * goal / int64(len(machines))
 
@@ -31,4 +28,28 @@ func minTime(machines []int64, goal int64) int64 {
 		}
 	}
 	return end
+}
+
+func minTime1(machines []int64, goal int64) int64 {
+	var start int64 = 0
+	maxDay := Max64(machines...)
+	var end int64 = maxDay * goal / int64(len(machines))
+	for start <= end {
+		m := (start + end) / 2
+		prod := totalProductionAt(m, machines)
+		if prod < goal {
+			start = m + 1
+		} else {
+			end = m - 1
+		}
+	}
+	return start
+}
+
+func totalProductionAt(days int64, machines []int64) int64 {
+	var total int64 = 0
+	for _, machine := range machines {
+		total += (days / machine)
+	}
+	return total
 }

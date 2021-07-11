@@ -1,6 +1,7 @@
 package algorithms
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -30,6 +31,8 @@ func Test_MinCostClimbingStairs(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := minCostClimbingStairs(tc.Costs)
-		assert.Equal(t, tc.Expected, actual)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("minCostClimbingStairs did not work for %v", tc.Costs))
+		actual = minCostClimbingStairs1(tc.Costs)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("minCostClimbingStairs1 did not work for %v", tc.Costs))
 	}
 }

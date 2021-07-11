@@ -19,33 +19,33 @@ func mergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
 	return head
 }
 
-// func mergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
-// 	var head *lists.ListNode
-// 	var currentNode *lists.ListNode
-// 	var otherNode *lists.ListNode
-// 	if l1 == nil {
-// 		return l2
-// 	} else if l2 == nil {
-// 		return l1
-// 	}
-// 	if l1.Val < l2.Val {
-// 		head = l1
-// 		otherNode = l2
-// 	} else {
-// 		head = l2
-// 		otherNode = l1
-// 	}
-// 	currentNode = head
-// 	for otherNode != nil && currentNode.Next != nil {
-// 		if currentNode.Next.Val > otherNode.Val {
-// 			oldNext := currentNode.Next
-// 			currentNode.Next = otherNode
-// 			otherNode = oldNext
-// 		}
-// 		currentNode = currentNode.Next
-// 	}
-// 	if currentNode.Next == nil && otherNode != nil {
-// 		currentNode.Next = otherNode
-// 	}
-// 	return head
-// }
+func mergeTwoLists1(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
+	var head *lists.ListNode
+	var currentNode *lists.ListNode
+	var otherNode *lists.ListNode
+	if l1 == nil {
+		return l2
+	} else if l2 == nil {
+		return l1
+	}
+	if l1.Val < l2.Val {
+		head = l1
+		otherNode = l2
+	} else {
+		head = l2
+		otherNode = l1
+	}
+	currentNode = head
+	for otherNode != nil && currentNode.Next != nil {
+		if currentNode.Next.Val > otherNode.Val {
+			oldNext := currentNode.Next
+			currentNode.Next = otherNode
+			otherNode = oldNext
+		}
+		currentNode = currentNode.Next
+	}
+	if currentNode.Next == nil && otherNode != nil {
+		currentNode.Next = otherNode
+	}
+	return head
+}

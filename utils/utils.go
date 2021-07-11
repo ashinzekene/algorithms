@@ -19,3 +19,23 @@ func Min(a ...int) int {
 	}
 	return min
 }
+
+func Max64(a ...int64) int64 {
+	max := a[0]
+	for _, v := range a {
+		if v > max {
+			max = v
+		}
+	}
+	return max
+}
+
+func Min64(a ...int64) int64 {
+	min := a[0]
+	for _, v := range a {
+		if v < min {
+			min = v
+		}
+	}
+	return min
+}

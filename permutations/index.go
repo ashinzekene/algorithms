@@ -27,3 +27,23 @@ func addToResult(nums []int, result *[][]int, current []int, present map[int]boo
 		present[index] = false
 	}
 }
+
+func permute1(arr []int) [][]int {
+	result := make([][]int, 0)
+	addPermutations(make([]int, 0), arr, &result)
+	return result
+}
+
+func addPermutations(added, available []int, result *[][]int) {
+	if len(available) == 0 {
+		*result = append(*result, added)
+		return
+	}
+	for i := range available {
+		current := available[i]
+		newAvailable := make([]int, len(available))
+		copy(newAvailable, available)
+		newAvailable = append(newAvailable[:i], newAvailable[i+1:]...)
+		addPermutations(append(added, current), newAvailable, result)
+	}
+}

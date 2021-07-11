@@ -62,6 +62,8 @@ func Test_Permutations(t *testing.T) {
 	}
 	for i, tc := range testCases {
 		result := permute(tc.Nums)
-		assert.Equal(t, tc.Expected, result, fmt.Sprintf("Failed for %v", i))
+		assert.Equal(t, tc.Expected, result, fmt.Sprintf("permute failed for %v", i))
+		result = permute1(tc.Nums)
+		assert.Equal(t, tc.Expected, result, fmt.Sprintf("permute1 failed for %v", i))
 	}
 }

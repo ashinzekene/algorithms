@@ -1,24 +1,22 @@
 package algorithms
 
-import "github.com/ashinzekene/algorithms/utils"
+import . "github.com/ashinzekene/algorithms/utils"
 
 func maxProduct(nums []int) int {
 	if len(nums) == 0 {
 		return 0
 	}
-	mainMax := nums[0]
-	prevMin := mainMax
-	prevMax := mainMax
-	for _, v := range nums[1:] {
-		max_min := utils.Max(prevMin*v, v)
-		min_min := utils.Min(prevMin*v, v)
-		max_max := utils.Max(prevMax*v, v)
-		min_max := utils.Min(prevMax*v, v)
+	prevMax := nums[0]
+	prevMin := nums[0]
+	maxProduct := nums[0]
+	minProduct := nums[0]
+	for _, num := range nums[1:] {
+		newMaxProduct := Max(maxProduct*num, minProduct*num, num)
+		minProduct = Min(minProduct*num, maxProduct*num, num)
+		maxProduct = newMaxProduct
 
-		prevMin = utils.Min(min_max, min_min)
-		prevMax = utils.Max(max_min, max_max)
-
-		mainMax = utils.Max(mainMax, prevMax)
+		prevMax = Max(prevMax, maxProduct)
+		prevMin = Min(prevMin, minProduct)
 	}
-	return mainMax
+	return prevMax
 }

@@ -24,6 +24,14 @@ func Test_MaxProduct(t *testing.T) {
 			[]int{-2, 0, -1},
 			0,
 		},
+		{
+			[]int{-4, -3, -2},
+			12,
+		},
+		{
+			[]int{-1, -2, -9, -6},
+			108,
+		},
 	}
 	for _, tc := range testCases {
 		actual := maxProduct(tc.Nums)

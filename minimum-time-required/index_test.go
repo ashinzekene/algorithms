@@ -41,7 +41,9 @@ func Test_MinimumTimeRequired(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := minTime(tc.Machines, tc.Goal)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Did not work for %v", tc.Machines))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("minTime did not work for %v", tc.Machines))
+		actual = minTime1(tc.Machines, tc.Goal)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("minTime1 did not work for %v", tc.Machines))
 	}
 
 }
