@@ -8,6 +8,36 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// ========= Create tree from array
+func TreeFromList(arr []int) Tree {
+	t := Tree{Head: NewTreeNode(arr[0])}
+	for _, v := range arr[1:] {
+		t.Insert(v)
+	}
+	return t
+}
+
+func TreeFromListLevelOrder(arr []int) *TreeNode {
+	return createTreeFromListLevelOrder(arr, 0)
+}
+
+func createTreeFromListLevelOrder(arr []int, i int) *TreeNode {
+	// Using 0 to represent nil
+	if arr[i] == 0 {
+		return nil
+	}
+	head := NewTreeNode(arr[i])
+	leftIndex := i*2 + 1
+	rightIndex := i*2 + 2
+	if len(arr) > leftIndex {
+		head.Left = createTreeFromListLevelOrder(arr, leftIndex)
+	}
+	if len(arr) > rightIndex {
+		head.Right = createTreeFromListLevelOrder(arr, rightIndex)
+	}
+	return head
+}
+
 func NewTreeNode(i int) *TreeNode {
 	return &TreeNode{Val: i, Left: nil, Right: nil}
 }
@@ -86,15 +116,6 @@ func (t *Tree) LevelOrder() []int {
 		}
 	}
 	return result
-}
-
-// ========= Create tree from array
-func TreeFromList(arr []int) Tree {
-	t := Tree{Head: NewTreeNode(arr[0])}
-	for _, v := range arr[1:] {
-		t.Insert(v)
-	}
-	return t
 }
 
 // ========= Utility functions
