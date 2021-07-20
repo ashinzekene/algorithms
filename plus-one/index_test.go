@@ -1,6 +1,7 @@
 package algorithms
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -42,6 +43,6 @@ func Test_PermutationEquation(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := plusOne(tc.Array)
-		assert.Equal(t, tc.Expected, actual)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("plusOne did not work for %v", tc.Array))
 	}
 }

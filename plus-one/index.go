@@ -1,20 +1,14 @@
 package algorithms
 
-func plusOne(digits []int) []int {
-	digits_length := len(digits)
-	if digits_length == 0 {
-		return digits
+func plusOne(nums []int) []int {
+	remainder := 1
+	for i := len(nums) - 1; i >= 0; i-- {
+		val := nums[i] + remainder
+		remainder = val / 10
+		nums[i] = val % 10
 	}
-	i := digits_length - 1
-	for i > 0 && digits[i] == 9 {
-		digits[i] = 0
-		i--
+	if remainder > 0 {
+		return append([]int{remainder}, nums...)
 	}
-	if i == 0 && digits[i] == 9 {
-		digits[0] = 0
-		digits = append([]int{1}, digits...)
-	} else if i >= 0 {
-		digits[i]++
-	}
-	return digits
+	return nums
 }

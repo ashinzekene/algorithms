@@ -23,5 +23,7 @@ func Test_Toys(t *testing.T) {
 	for _, tc := range testCases {
 		actual := toys(tc.Toys)
 		assert.Equal(t, tc.Expected, actual)
+		actual = toys1(tc.Toys)
+		assert.Equal(t, tc.Expected, actual)
 	}
 }

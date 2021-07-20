@@ -20,3 +20,21 @@ func toys(w []int32) int32 {
 	}
 	return int32(len(mins))
 }
+
+func toys1(nums []int32) int32 {
+	if len(nums) == 0 {
+		return 0
+	}
+	sort.Slice(nums, func(i, j int) bool {
+		return nums[i] < nums[j]
+	})
+	var containers int32 = 1
+	minWeight := nums[0]
+	for _, v := range nums[1:] {
+		if v-minWeight > 4 {
+			minWeight = v
+			containers++
+		}
+	}
+	return containers
+}

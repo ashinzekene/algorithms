@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_RepeartedString(t *testing.T) {
+func Test_RepeatedString(t *testing.T) {
 	testCases := []struct {
 		String   string
 		Repeats  int64
@@ -30,6 +30,8 @@ func Test_RepeartedString(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := RepeatedString(tc.String, tc.Repeats)
+		assert.Equal(t, tc.Expected, actual)
+		actual = RepeatedString1(tc.String, tc.Repeats)
 		assert.Equal(t, tc.Expected, actual)
 	}
 }
