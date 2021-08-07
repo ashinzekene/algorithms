@@ -5,30 +5,33 @@ import "sort"
 func threeSum(nums []int) [][]int {
 	result := make([][]int, 0)
 	sort.Ints(nums)
-	for i := 0; i < len(nums)-1; i++ {
-		num := nums[i] * -1
-		if i > 0 && nums[i] == nums[i-1] {
-			continue
-		}
-		v1 := i + 1
-		v2 := len(nums) - 1
-		for v1 < v2 {
-			v1Val := nums[v1]
-			v2Val := nums[v2]
-			if v1Val+v2Val == num {
-				result = append(result, []int{nums[i], v1Val, v2Val})
-				for v1 < v2 && nums[v1] == nums[v1+1] {
-					v1++
+	for i := 0; i < len(nums)-2; {
+		v := nums[i]
+		j := i + 1
+		k := len(nums) - 1
+		for j < k {
+			val1 := nums[j]
+			val2 := nums[k]
+			sum := v + val1 + val2
+			if sum == 0 {
+				result = append(result, []int{v, val1, val2})
+				j++
+				for j < len(nums) && nums[j] == nums[j-1] {
+					j++
 				}
-				for v1 < v2 && nums[v2] == nums[v2-1] {
-					v2--
+				k--
+				for k > 0 && nums[k] == nums[k+1] {
+					k--
 				}
-				v1++
-			} else if (v1Val + v2Val) > num {
-				v2--
+			} else if sum < 0 {
+				j++
 			} else {
-				v1++
+				k--
 			}
+		}
+		i++
+		for i < len(nums) && nums[i] == nums[i-1] {
+			i++
 		}
 	}
 	return result
