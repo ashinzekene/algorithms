@@ -1,51 +1,59 @@
 package algorithms
 
 func exist(board [][]byte, word string) bool {
-	if len(board) == 0 {
-		return false
-	}
-	usedCells := make(map[int]map[int]bool)
 	for i := 0; i < len(board); i++ {
 		for j := 0; j < len(board[0]); j++ {
 			if board[i][j] == word[0] {
-				hasWord := findNextChar(board, i, j, word[1:], usedCells)
-				if hasWord {
+				prevVal := board[i][j]
+				board[i][j] = '-'
+				if findWord(board, word[1:], i, j) {
 					return true
 				}
+				board[i][j] = prevVal
 			}
 		}
 	}
 	return false
 }
 
-func findNextChar(grid [][]byte, i, j int, word string, usedCells map[int]map[int]bool) bool {
-	if usedCells[i] == nil {
-		usedCells[i] = make(map[int]bool)
-	}
-	usedCells[i][j] = true
-	if word == "" {
+func findWord(board [][]byte, wordLeft string, pI, pJ int) bool {
+	if wordLeft == "" {
 		return true
 	}
-	if i-1 >= 0 && !usedCells[i-1][j] {
-		if grid[i-1][j] == word[0] && findNextChar(grid, i-1, j, word[1:], usedCells) {
+	if pI-1 >= 0 && board[pI-1][pJ] == wordLeft[0] {
+		prevVal := board[pI-1][pJ]
+		board[pI-1][pJ] = '-'
+		if findWord(board, wordLeft[1:], pI-1, pJ) {
 			return true
 		}
+		board[pI-1][pJ] = prevVal
+
 	}
-	if j+1 < len(grid[0]) && !usedCells[i][j+1] {
-		if grid[i][j+1] == word[0] && findNextChar(grid, i, j+1, word[1:], usedCells) {
+	if pJ-1 >= 0 && board[pI][pJ-1] == wordLeft[0] {
+		prevVal := board[pI][pJ-1]
+		board[pI][pJ-1] = '-'
+		if findWord(board, wordLeft[1:], pI, pJ-1) {
 			return true
 		}
+		board[pI][pJ-1] = prevVal
+
 	}
-	if i+1 < len(grid) && !usedCells[i+1][j] {
-		if grid[i+1][j] == word[0] && findNextChar(grid, i+1, j, word[1:], usedCells) {
+	if pJ+1 < len(board[0]) && board[pI][pJ+1] == wordLeft[0] {
+		prevVal := board[pI][pJ+1]
+		board[pI][pJ+1] = '-'
+		if findWord(board, wordLeft[1:], pI, pJ+1) {
 			return true
 		}
+		board[pI][pJ+1] = prevVal
+
 	}
-	if j-1 >= 0 && !usedCells[i][j-1] {
-		if grid[i][j-1] == word[0] && findNextChar(grid, i, j-1, word[1:], usedCells) {
+	if pI+1 < len(board) && board[pI+1][pJ] == wordLeft[0] {
+		prevVal := board[pI+1][pJ]
+		board[pI+1][pJ] = '-'
+		if findWord(board, wordLeft[1:], pI+1, pJ) {
 			return true
 		}
+		board[pI+1][pJ] = prevVal
 	}
-	usedCells[i][j] = false
 	return false
 }
