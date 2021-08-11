@@ -39,3 +39,10 @@ func Min64(a ...int64) int64 {
 	}
 	return min
 }
+
+func Abs(a int) int {
+	if a > 0 {
+		return a
+	}
+	return a * -1
+}
