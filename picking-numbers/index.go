@@ -51,10 +51,3 @@ func PickingNumbers1(arr []int) int {
 	}
 	return max
 }
-
-func Abs(v int) int {
-	if v > -1 {
-		return v
-	}
-	return v * -1
-}
