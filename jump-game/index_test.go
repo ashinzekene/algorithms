@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_whatFlavors(t *testing.T) {
+func Test_jumpGame(t *testing.T) {
 	testCases := []struct {
 		Nums     []int
 		Expected bool
