@@ -46,3 +46,29 @@ func Abs(a int) int {
 	}
 	return a * -1
 }
+
+func UniqueStr(items []string) []string {
+	holder := make(map[string]int)
+	newItems := make([]string, 0)
+	for i := 0; i < len(items); i++ {
+		item := items[i]
+		if holder[item] == 0 {
+			holder[item] = 1
+			newItems = append(newItems, item)
+		}
+	}
+	return newItems
+}
+
+func UniqueInt(items []int) []int {
+	holder := make(map[int]int)
+	newItems := make([]int, 0)
+	for i := 0; i < len(items); i++ {
+		item := items[i]
+		if holder[item] == 0 {
+			holder[item] = 1
+			newItems = append(newItems, item)
+		}
+	}
+	return newItems
+}
