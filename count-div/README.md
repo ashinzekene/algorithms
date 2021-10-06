@@ -1,1 +1,1 @@
-https://app.codility.com/demo/results/trainingRE8K8E-MPU/#
+https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/
