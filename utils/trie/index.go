@@ -1,9 +1,8 @@
 package algorithms
 
 type TrieNode struct {
-	Count int
-	End   bool
-	Keys  map[rune]*TrieNode
+	End  bool
+	Keys map[rune]*TrieNode
 }
 
 type Trie struct {
@@ -13,17 +12,15 @@ type Trie struct {
 func NewTrie() *Trie {
 	return &Trie{
 		Head: &TrieNode{
-			Count: 0,
-			Keys:  make(map[rune]*TrieNode),
+			Keys: make(map[rune]*TrieNode),
 		},
 	}
 }
 
 func NewTrieNode() *TrieNode {
 	return &TrieNode{
-		Count: 0,
-		End:   false,
-		Keys:  make(map[rune]*TrieNode),
+		End:  false,
+		Keys: make(map[rune]*TrieNode),
 	}
 }
 
@@ -33,7 +30,7 @@ func (t *Trie) Insert(word string) *Trie {
 		if currentTrie.Keys[char] == nil {
 			currentTrie.Keys[char] = NewTrieNode()
 		}
-		currentTrie.Keys[char].Count++
+		// currentTrie.Keys[char].Count++
 		currentTrie = currentTrie.Keys[char]
 	}
 	currentTrie.End = true
@@ -48,7 +45,7 @@ func (t *Trie) Count(substr string) int {
 		}
 		currentTrie = currentTrie.Keys[char]
 	}
-	return currentTrie.Count
+	return count(currentTrie)
 }
 
 func (t *Trie) Find(substr string) bool {
@@ -68,12 +65,26 @@ func (t *Trie) Remove(word string) bool {
 		return false
 	}
 	for i, char := range word {
-		currentTrie.Keys[char].Count--
-		if i == len(word)-1 && currentTrie.Keys[char].Count == 0 {
-			delete(currentTrie.Keys, char)
-			break
+		if i == len(word)-1 {
+			if len(currentTrie.Keys) == 0 {
+				delete(currentTrie.Keys, char)
+				break
+			} else {
+				currentTrie.End = false
+			}
 		}
 		currentTrie = currentTrie.Keys[char]
 	}
 	return true
+}
+
+func count(t *TrieNode) int {
+	result := 0
+	if t.End {
+		result++
+	}
+	for _, trie := range t.Keys {
+		result += count(trie)
+	}
+	return result
 }
