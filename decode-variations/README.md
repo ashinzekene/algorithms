@@ -15,10 +15,11 @@ output: 3
 explanation: There are 3 messages that encode to '1262': 'AZB', 'ABFB', and 'LFB'.
 ```
 Constraints:
-
+```
 [time limit] 5000ms
 
 [input] string S
 
 1 ≤ S.length ≤ 12
 [output] integer
+```

@@ -25,7 +25,7 @@ func binaryGap(N int) int {
 		} else {
 			max = Max(current, max)
 			current = 0
-			start = end
+			start = end //nolint
 		}
 	}
 	return max

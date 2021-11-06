@@ -17,11 +17,14 @@ func TreeFromList(arr []int) Tree {
 	return t
 }
 
-func TreeFromListLevelOrder(arr []int) *TreeNode {
-	return createTreeFromListLevelOrder(arr, 0)
+func TreeFromListLevelOrder(arr []int, nullVal int) *Tree {
+	head := createTreeFromListLevelOrder(arr, 0, nullVal)
+	return &Tree{
+		Head: head,
+	}
 }
 
-func createTreeFromListLevelOrder(arr []int, i int) *TreeNode {
+func createTreeFromListLevelOrder(arr []int, i int, nullVal int) *TreeNode {
 	// Using 0 to represent nil
 	if arr[i] == 0 {
 		return nil
@@ -30,10 +33,10 @@ func createTreeFromListLevelOrder(arr []int, i int) *TreeNode {
 	leftIndex := i*2 + 1
 	rightIndex := i*2 + 2
 	if len(arr) > leftIndex {
-		head.Left = createTreeFromListLevelOrder(arr, leftIndex)
+		head.Left = createTreeFromListLevelOrder(arr, leftIndex, nullVal)
 	}
 	if len(arr) > rightIndex {
-		head.Right = createTreeFromListLevelOrder(arr, rightIndex)
+		head.Right = createTreeFromListLevelOrder(arr, rightIndex, nullVal)
 	}
 	return head
 }
@@ -41,6 +44,8 @@ func createTreeFromListLevelOrder(arr []int, i int) *TreeNode {
 func NewTreeNode(i int) *TreeNode {
 	return &TreeNode{Val: i, Left: nil, Right: nil}
 }
+
+// ========== Tree Implementation ===============
 
 type Tree struct {
 	Head *TreeNode
