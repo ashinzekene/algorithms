@@ -41,9 +41,7 @@ func Test_mergeTwoLists(t *testing.T) {
 		},
 	}
 	for _, tc := range testCases {
-		actual := mergeTwoLists(tc.Node1, tc.Node2)
+		actual := MergeTwoLists(tc.Node1, tc.Node2)
 		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("mergeTwoLists did not work for %v", tc.Node1))
-		actual = mergeTwoLists1(tc.Node1, tc.Node2)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("mergeTwoLists1 did not work for %v", tc.Node1))
 	}
 }

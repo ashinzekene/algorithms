@@ -2,7 +2,7 @@ package algorithms
 
 import "github.com/ashinzekene/algorithms/utils/lists"
 
-func mergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
+func MergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
 	if l1 == nil {
 		return l2
 	} else if l2 == nil {
@@ -11,15 +11,15 @@ func mergeTwoLists(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
 	var head *lists.ListNode
 	if l1.Val < l2.Val {
 		head = l1
-		head.Next = mergeTwoLists(l1.Next, l2)
+		head.Next = MergeTwoLists(l1.Next, l2)
 	} else {
 		head = l2
-		head.Next = mergeTwoLists(l2.Next, l1)
+		head.Next = MergeTwoLists(l2.Next, l1)
 	}
 	return head
 }
 
-func mergeTwoLists1(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
+func MergeTwoLists1(l1 *lists.ListNode, l2 *lists.ListNode) *lists.ListNode {
 	var head *lists.ListNode
 	var currentNode *lists.ListNode
 	var otherNode *lists.ListNode
