@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_whatFlavors(t *testing.T) {
+func Test_intToRoman(t *testing.T) {
 	testCases := []struct {
 		Number   int
 		Expected string
