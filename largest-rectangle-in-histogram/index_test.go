@@ -50,6 +50,8 @@ func Test_LargestRectangleArea(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := LargestRectangleArea(tc.Heights)
+		actual1 := LargestRectangleArea(tc.Heights)
 		assert.Equal(t, tc.Expected, actual)
+		assert.Equal(t, tc.Expected, actual1)
 	}
 }

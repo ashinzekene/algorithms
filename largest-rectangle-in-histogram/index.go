@@ -31,3 +31,30 @@ func LargestRectangleArea(heights []int) int {
 	}
 	return maxArea
 }
+
+// Interesting nlog(n) solution
+func LargestRectangleArea2(heights []int) int {
+	if len(heights) == 0 {
+		return 0
+	} else if len(heights) == 1 {
+		return heights[0]
+	}
+	min, minIndex := getMin(heights)
+	return Max(
+		LargestRectangleArea2(heights[:minIndex]),
+		len(heights)*min,
+		LargestRectangleArea2(heights[minIndex+1:]),
+	)
+}
+
+func getMin(heights []int) (int, int) {
+	min := heights[0]
+	minIndex := 0
+	for i, height := range heights {
+		if height < min {
+			min = height
+			minIndex = i
+		}
+	}
+	return min, minIndex
+}
