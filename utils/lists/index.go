@@ -48,3 +48,13 @@ func ListNodeFromList(list []int) *ListNode {
 	}
 	return head
 }
+
+func ListNodeToList(head *ListNode) []int {
+	result := make([]int, 0)
+	current := head
+	for current != nil {
+		result = append(result, current.Val)
+		current = current.Next
+	}
+	return result
+}
