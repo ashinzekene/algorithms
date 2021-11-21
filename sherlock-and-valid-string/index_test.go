@@ -34,6 +34,6 @@ func Test_isValid(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := isValid(tc.String)
-		assert.Equal(t, tc.Expected, actual)
+		assert.Equal(t, tc.Expected, actual, "Did not work for "+tc.String)
 	}
 }
