@@ -1,37 +1,31 @@
 package algorithms
 
-func merge_arr(L []int, R []int, A []int) []int {
-	l, r, i := 0, 0, 0
-	for l < len(L) && r < len(R) {
-		if L[l] < R[r] {
-			A[i] = L[l]
-			l++
-		} else {
-			A[i] = R[r]
-			r++
+func MergeSort(s []int) []int {
+	l := len(s)
+	if l <= 1 {
+		return s
+	} else if l == 2 {
+		if s[0] > s[1] {
+			return []int{s[1], s[0]}
 		}
-		i++
+		return s
 	}
-	for l < len(L) {
-		A[i] = L[l]
-		l++
-		i++
-	}
-	for r < len(R) {
-		A[i] = R[r]
-		r++
-		i++
-	}
-	return A
+	m := l / 2
+	a, b := s[:m], s[m:]
+	sorted_a := MergeSort(a)
+	sorted_b := MergeSort(b)
+	return mergeSortedList(sorted_a, sorted_b)
 }
 
-func MergeSort(A []int) []int {
-	if len(A) < 2 {
-		return A
+func mergeSortedList(a, b []int) []int {
+	if len(a) == 0 {
+		return b
+	} else if len(b) == 0 {
+		return a
 	}
-	mid := len(A) / 2
-	// append([]int{}, A[:mid]...) - creates a new slice without referencing A
-	L := MergeSort(append([]int{}, A[:mid]...))
-	R := MergeSort(append([]int{}, A[mid:]...))
-	return merge_arr(L, R, A)
+	if a[0] < b[0] {
+		return append([]int{a[0]}, mergeSortedList(a[1:], b)...)
+	} else {
+		return append([]int{b[0]}, mergeSortedList(b[1:], a)...)
+	}
 }
