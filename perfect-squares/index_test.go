@@ -22,7 +22,7 @@ func Test_NumSquares(t *testing.T) {
 		},
 		{
 			120,
-			4,
+			3,
 		},
 		{
 			1,
