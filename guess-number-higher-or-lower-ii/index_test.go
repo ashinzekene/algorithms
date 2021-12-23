@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func Test_trailingZeroes(t *testing.T) {
+func Test_getMoneyAmount(t *testing.T) {
 	testCases := []struct {
 		N        int
 		Expected int
@@ -17,32 +17,28 @@ func Test_trailingZeroes(t *testing.T) {
 			0,
 		},
 		{
-			12,
 			2,
+			1,
 		},
 		{
-			26,
+			4,
+			4,
+		},
+		{
+			5,
 			6,
 		},
 		{
-			126,
-			31,
+			8,
+			12,
 		},
 		{
-			635,
-			158,
-		},
-		{
-			2132,
-			531,
-		},
-		{
-			3126,
-			781,
+			10,
+			16,
 		},
 	}
 	for _, tc := range testCases {
-		actual := trailingZeroes(tc.N)
+		actual := getMoneyAmount(tc.N)
 		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for %d ", tc.N))
 	}
 }
