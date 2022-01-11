@@ -26,6 +26,9 @@ func TreeFromListLevelOrder(arr []int, nullVal int) *Tree {
 
 func createTreeFromListLevelOrder(arr []int, i int, nullVal int) *TreeNode {
 	// Using 0 to represent nil
+	if len(arr) == 0 {
+		return nil
+	}
 	if arr[i] == nullVal {
 		return nil
 	}
