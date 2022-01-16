@@ -39,6 +39,8 @@ func Test_rob(t *testing.T) {
 	}
 	for _, tc := range testCases {
 		actual := rob(tc.Nums)
-		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("Failed for groupAnagrams1 using: %v", tc.Nums))
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("rob failed for groupAnagrams1 using: %v", tc.Nums))
+		actual = rob1(tc.Nums)
+		assert.Equal(t, tc.Expected, actual, fmt.Sprintf("rob1 failed for groupAnagrams1 using: %v", tc.Nums))
 	}
 }

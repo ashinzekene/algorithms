@@ -37,6 +37,7 @@ func canFinish(numCourses int, prerequisites [][]int) bool {
 	}
 	return numCourses == noOfCourses
 }
+
 func canFinish1(numCourses int, prerequisites [][]int) bool {
 	outs := make(map[int][]int)
 	cycleExists := make(map[int]bool)

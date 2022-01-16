@@ -24,3 +24,18 @@ func rob(nums []int) int {
 	}
 	return dp[len(nums)-1]
 }
+
+// O(1) space
+func rob1(nums []int) int {
+	prevCumm := 0
+	cumm := 0
+	max := nums[0]
+	for i := 0; i < len(nums); i++ {
+		current := nums[i]
+		newCumm := current + prevCumm
+		max = Max(newCumm, cumm)
+		prevCumm = Max(cumm, prevCumm)
+		cumm = newCumm
+	}
+	return max
+}
