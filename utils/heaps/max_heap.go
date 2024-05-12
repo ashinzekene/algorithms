@@ -40,10 +40,13 @@ func (q *MaxHeap) Max() int {
 	return q.items[0]
 }
 
-func (q *MaxHeap) RemoveMax() {
+func (q *MaxHeap) RemoveMax() int {
 	q.itemsCount--
+	max_val := q.items[0]
 	q.items[0] = q.items[q.itemsCount]
+	q.items[q.itemsCount] = 0
 	q.heapifyFromTop(0)
+	return max_val
 }
 
 func (q *MaxHeap) GetLeftChildIndex(i int) int {

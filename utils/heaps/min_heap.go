@@ -43,6 +43,7 @@ func (q *MinHeap) Min() int {
 func (q *MinHeap) RemoveMin() {
 	q.itemsCount--
 	q.items[0] = q.items[q.itemsCount]
+	q.items[q.itemsCount] = 0
 	q.heapifyFromTop(0)
 }
 
