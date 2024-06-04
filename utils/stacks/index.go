@@ -67,3 +67,38 @@ func (s *IntStack) Length() int {
 func (s *IntStack) IsEmpty() bool {
 	return len(s.list) == 0
 }
+//  =========================
+//	GENERIC STACK
+//  =========================
+
+type Stack[T any] struct {
+	list []T
+}
+
+func NewStack[T any]() *Stack[T] {
+	return &Stack[T]{
+		list: make([]T, 0),
+	}
+}
+
+func (s *Stack[T]) Pop() T {
+	val := s.list[len(s.list)-1]
+	s.list = s.list[:len(s.list)-1]
+	return val
+}
+
+func (s *Stack[T]) Push(val T) {
+	s.list = append(s.list, val)
+}
+
+func (s *Stack[T]) Peek() T {
+	return s.list[len(s.list)-1]
+}
+
+func (s *Stack[T]) Length() int {
+	return len(s.list)
+}
+
+func (s *Stack[T]) IsEmpty() bool {
+	return len(s.list) == 0
+}

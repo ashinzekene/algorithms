@@ -3,7 +3,7 @@ package algorithms
 import . "github.com/ashinzekene/algorithms/utils"
 
 func minTime(machines []int64, goal int64) int64 {
-	max_day := Max64(machines...)
+	max_day := Max(machines...)
 	var start int64 = 0
 	end := max_day * goal / int64(len(machines))
 
@@ -32,7 +32,7 @@ func minTime(machines []int64, goal int64) int64 {
 
 func minTime1(machines []int64, goal int64) int64 {
 	var start int64 = 0
-	maxDay := Max64(machines...)
+	maxDay := Max(machines...)
 	var end int64 = maxDay * goal / int64(len(machines))
 	for start <= end {
 		m := (start + end) / 2

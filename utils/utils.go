@@ -1,6 +1,8 @@
 package utils
 
-func Max(a ...int) int {
+import "golang.org/x/exp/constraints"
+
+func Max[T constraints.Ordered](a ...T) T {
 	max := a[0]
 	for _, v := range a {
 		if v > max {
@@ -10,27 +12,7 @@ func Max(a ...int) int {
 	return max
 }
 
-func Min(a ...int) int {
-	min := a[0]
-	for _, v := range a {
-		if v < min {
-			min = v
-		}
-	}
-	return min
-}
-
-func Max64(a ...int64) int64 {
-	max := a[0]
-	for _, v := range a {
-		if v > max {
-			max = v
-		}
-	}
-	return max
-}
-
-func Min64(a ...int64) int64 {
+func Min[T constraints.Ordered](a ...T) T {
 	min := a[0]
 	for _, v := range a {
 		if v < min {
