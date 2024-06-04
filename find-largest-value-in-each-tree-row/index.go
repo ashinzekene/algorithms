@@ -4,7 +4,7 @@ import (
 	"math"
 
 	"github.com/ashinzekene/algorithms/utils"
-	"github.com/ashinzekene/algorithms/utils/queues"
+	. "github.com/ashinzekene/algorithms/utils/queues"
 	"github.com/ashinzekene/algorithms/utils/trees"
 )
 
@@ -15,7 +15,7 @@ func largestValues(root *trees.TreeNode) []int {
 	}
 	
 
-	queue := queues.NewQueue[ValRow]()
+	queue := NewQueue[ValRow]()
 	queue.Enqueue(ValRow{
 		val: root,
 		row: 0,
