@@ -18,6 +18,10 @@ jobs:
       with:
         go-version: 1.22
 
+    - name: Check dir
+      run: |
+        la -al
+
     - name: Install dependencies
       run: |
         go get .
