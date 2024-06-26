@@ -20,7 +20,7 @@ jobs:
 
     - name: Check dir
       run: |
-        la -al
+        ls -al
 
     - name: Install dependencies
       run: |
